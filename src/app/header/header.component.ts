@@ -1,18 +1,22 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  @Input
+  @Input()
   public title: string;
 
-  constructor() { }
+  @Input()
+  public drawer: MatSidenav;
 
-  ngOnInit() {
+  public toggleDrawer(): void {
+    this.drawer.toggle();
   }
 
+  
 }

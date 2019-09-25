@@ -1,8 +1,7 @@
-<app-header [title]="title.text"></app-header>
-<app-sidenav></app-sidenav>
-
-<!-- <p>{{ getMoney() + 2 + '$' }}</p>
-<p>{{title.text}}</p>
-<p>{{title.subtitle?.text}}</p>
-<img [style.width.px]="width" [src]="imgSrc" alt="Logo" (click)="onImgClick($event, imgSrc)">
-<div [innerHTML]="content"></div> -->
+<app-header [title]="title.text" [drawer]="drawer"></app-header>
+<app-sidenav (setSidenavControl)="setSideNav($event)">
+    <p class="paragraf">Параграф текст тест</p>
+    <h1>Контент</h1>
+    <p class="paragraf">Параграф #2 текст тест</p>
+    <span class="number">Паприка</span>
+</app-sidenav>

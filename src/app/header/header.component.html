@@ -1,8 +1,6 @@
 <mat-toolbar color="primary">    
-    <mat-toolbar-row>
-        <span>Тулбар</span>
-        <!-- This fills the remaining space of the current row -->
-        <span class="example-fill-remaining-space"></span>
-        <span>Right Aligned Text</span>
-    </mat-toolbar-row>
+    <button mat-button (click)="toggleDrawer()">
+        <mat-icon matListIcon>view_headliner</mat-icon>
+    </button>
+    <h3>{{title}}</h3>
 </mat-toolbar>

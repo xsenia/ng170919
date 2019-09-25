@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -11,23 +12,11 @@ export class AppComponent {
     subtitle: {text: 'Подзаголовок'}
   };
 
-  private _money = 3000;
+  public drawer: MatSidenav;
 
-  public getMoney(): number {
-    return this._money * 1.2;
+  public setSideNav(drawer: MatSidenav): void {
+    Promise.resolve().then(() => this.drawer = drawer);
   }
-
-  public imgSrc: string = 'https://i.mycdn.me/i?r=AzGBqNaF5OQp2lMpnhRx4DEFuNa8ffA-0s7dVNwD1ApIldjUuV0GcIKOUKJHhJh04to';
-
-  public content: string = '<span>Какой-то текст</span>';
-
-  public width: number = 170;
-
-  public onImgClick(ev: MouseEvent, src: string): void {
-    console.log(ev, src);
-    console.log('src: ', src);
-  }
-
    
 }
 

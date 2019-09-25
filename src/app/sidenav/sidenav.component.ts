@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 
 @Component({
@@ -8,13 +8,13 @@ import { MatSidenav } from '@angular/material';
 })
 export class SidenavComponent implements OnInit {
 
+  @Output()
+  public setSidenavControl: EventEmitter<MatSidenav> = new EventEmitter();
+
   @ViewChild('drawer', {static: true})
   public drawer: MatSidenav;
-  
 
-  public toggle(): void {
-    this.drawer.toggle();
+  public ngOnInit(): void {
+    this.setSidenavControl.emit(this.drawer);
   }
-  
-
 }
