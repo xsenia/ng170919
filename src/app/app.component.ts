@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSidenav } from '@angular/material';
+import {products, IProduct} from './mock';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ export class AppComponent {
     text: 'Курс Angular - ng170919',
     subtitle: {text: 'Подзаголовок'}
   };
+
+  public products: IProduct[] = products;
 
   public drawer: MatSidenav;
 
