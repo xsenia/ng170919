@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, OnInit, Output, EventEmitter, ContentChild, TemplateRef, ViewContainerRef } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 
 @Component({
@@ -14,7 +14,14 @@ export class SidenavComponent implements OnInit {
   @ViewChild('drawer', {static: true})
   public drawer: MatSidenav;
 
+  @ViewChild('container', {static: true, read: ViewContainerRef})
+  public container: ViewContainerRef;
+
+  @ContentChild('content', {static: true})
+  public templateContent: TemplateRef<any>;
+
   public ngOnInit(): void {
+    this.container.createEmbeddedView(this.templateContent);
     this.setSidenavControl.emit(this.drawer);
   }
 }

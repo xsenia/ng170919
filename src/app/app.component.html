@@ -1,7 +1,6 @@
 <app-header [title]="title.text" [drawer]="drawer"></app-header>
 <app-sidenav (setSidenavControl)="setSideNav($event)">
-    <p class="paragraf">Параграф текст тест</p>
-    <h1>Контент</h1>
-    <p class="paragraf">Параграф #2 текст тест</p>
-    <span class="number">Паприка</span>
+    <ng-template #content>
+        <div [ngClass]="{'show': isShow}">Test isShow</div>
+    </ng-template>
 </app-sidenav>

@@ -14,6 +14,14 @@ export class AppComponent {
 
   public drawer: MatSidenav;
 
+  public isShow: boolean = true;
+
+  public ngOnInit(): void {
+    setTimeout (()=>{
+      this.isShow = false;
+    }, 3000)
+  }
+
   public setSideNav(drawer: MatSidenav): void {
     Promise.resolve().then(() => this.drawer = drawer);
   }
