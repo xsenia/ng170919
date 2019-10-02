@@ -13,6 +13,8 @@ export class AppComponent {
     subtitle: {text: 'Подзаголовок'}
   };
 
+  public searchTerm: string = '';
+
   public products: IProduct[] = products;
 
   public drawer: MatSidenav;
@@ -29,5 +31,16 @@ export class AppComponent {
     Promise.resolve().then(() => this.drawer = drawer);
   }
    
+  // public search(event: KeyboardEvent): void {
+  //   this.searchTerm = $event.target.value;
+  // }
+  //или по-другому:
+
+  public search({target}: KeyboardEvent): void {
+    const value: string = (target as HTMLInputElement).value; 
+    this.searchTerm = value;
+    console.log(this.searchTerm);
+  }
+
 }
 
