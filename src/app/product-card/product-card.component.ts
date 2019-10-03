@@ -9,6 +9,10 @@ import { IProduct } from '../mock';
 export class ProductCardComponent {
   @Input()
   public product: IProduct;
+
+  public toggleFavorite(): void {
+    this.product.isFavorite = !this.product.isFavorite;
+  }
   
 
 }

@@ -7,13 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import { SharedModule } from './shared/shared.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductFilterPipe } from './product-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidenavComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductFilterPipe
   ],
   imports: [
     BrowserModule,

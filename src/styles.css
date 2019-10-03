@@ -8,3 +8,11 @@ body {
     padding: 0;
     margin: 0;
 }
+.mat-card-image {
+    max-width: 130px;
+    margin: 0 auto 20px !important;
+}
+
+.mat-card-header .mat-card-title {
+    font-size: 15px;
+}

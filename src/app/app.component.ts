@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav, MatCheckboxChange } from '@angular/material';
 import {products, IProduct} from './mock';
 
 @Component({
@@ -21,6 +21,8 @@ export class AppComponent {
 
   public isShow: boolean = true;
 
+  public onlyFavorites: boolean = false;
+
   public ngOnInit(): void {
     setTimeout (()=>{
       this.isShow = false;
@@ -36,10 +38,15 @@ export class AppComponent {
   // }
   //или по-другому:
 
-  public search({target}: KeyboardEvent): void {
+  public search({target}: Event): void {
     const value: string = (target as HTMLInputElement).value; 
     this.searchTerm = value;
     console.log(this.searchTerm);
+  }
+
+  public toggleOnlyFavorites(event: MatCheckboxChange): void {
+      console.log(event.checked);
+      this.onlyFavorites = event.checked;
   }
 
 }

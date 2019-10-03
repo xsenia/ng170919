@@ -6,9 +6,11 @@
         <mat-form-field class="product-search">
             <input matInput type="text" placeholder="Поиск товаров" (input)="search($event)">
         </mat-form-field>
+
+        <mat-checkbox (change)="toggleOnlyFavorites($event)">Show favorites only</mat-checkbox>
         
-        <mat-grid-list cols="4" rowHeight="500">
-            <mat-grid-tile *ngFor="let product of products; index as i">
+        <mat-grid-list cols="5" rowHeight="250">
+            <mat-grid-tile *ngFor="let product of products | productFilter:searchTerm:onlyFavorites">
 
                <app-product-card [product]="product"></app-product-card>
 
