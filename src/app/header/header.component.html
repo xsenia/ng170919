@@ -1,6 +1,10 @@
-<mat-toolbar color="primary">    
-    <button mat-button (click)="toggleDrawer()">
-        <mat-icon matListIcon>view_headliner</mat-icon>
-    </button>
-    <h3>{{title}}</h3>
+<mat-toolbar color="primary"> 
+    <mat-toolbar-row>   
+        <button mat-button (click)="toggleDrawer()">
+            <mat-icon matListIcon>view_headliner</mat-icon>
+        </button>
+        <h3>{{title}}</h3>
+        <span class="example-spacer"></span>
+        <app-exchange-rate [rates]="rates"></app-exchange-rate>
+    </mat-toolbar-row>
 </mat-toolbar>

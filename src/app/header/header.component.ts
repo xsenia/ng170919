@@ -14,6 +14,12 @@ export class HeaderComponent {
   @Input()
   public drawer: MatSidenav;
 
+  public rates: {value: number, currency: string}[] = [
+    {value: 1, currency: 'USD'},
+    {value: 10, currency: 'EUR'},
+    {value: 14, currency: 'RUB'}
+  ];
+
   public toggleDrawer(): void {
     this.drawer.toggle();
   }
