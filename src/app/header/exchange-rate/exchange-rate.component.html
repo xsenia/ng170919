@@ -1,9 +1,12 @@
-<div *appExchangeRate="let rate from rates autoplay 'on' delay 500; controller as ctrl">
-    <button mat-button (click)="ctrl.prev()">
-        <mat-icon matListIcon>keyboard_arrow_left</mat-icon>
+<div *appExchangeRate="let rate from rates autoplay 'on' delay 500; controller as ctrl"
+    (mouseenter)="cPrev.show();cNext.show()"
+    (mouseleave)="cPrev.hide();cNext.hide()"
+>
+    <button mat-button (click)="ctrl.prev()" appHidden #cPrev="hiddenControl">
+    <mat-icon matListIcon>keyboard_arrow_left</mat-icon>
     </button>
-    <span>{{ rate.value | currency: rate.currency : 'symbol-narrow' }}</span>
-    <button mat-button (click)="ctrl.next()">
-        <mat-icon matListIcon>keyboard_arrow_right</mat-icon>
+    <span>{{ rate.value | currency: rate.currency : 'symbol-narrow'}}</span>
+    <button mat-button (click)="ctrl.next()" appHidden #cNext="hiddenControl">
+    <mat-icon matListIcon>keyboard_arrow_right</mat-icon>
     </button>
 </div>

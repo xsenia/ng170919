@@ -22,7 +22,7 @@ export class ExchangeRateDirective implements OnInit {
   public autoplay: 'on' | 'off' = 'on';
   public context: any;
   public index: number = 0;
-  private intervalID: number;
+  private intervalID: any;
 
   public constructor(
     private readonly tpl: TemplateRef<any>,
