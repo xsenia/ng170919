@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule, MatCardModule, MatFormFieldModule, MatInputModule, MatCheckboxModule } from '@angular/material';
+import {MatToolbarModule, MatSidenavModule, MatListModule, MatButtonModule, MatIconModule, MatCardModule, MatFormFieldModule, MatInputModule, MatCheckboxModule, MatProgressSpinnerModule } from '@angular/material';
 import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
@@ -13,7 +13,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatGridListModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressSpinnerModule
   ]
 })
 export class SharedModule { }

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -11,6 +11,7 @@ import { ProductFilterPipe } from './product-filter.pipe';
 import { ExchangeRateComponent } from './header/exchange-rate/exchange-rate.component';
 import { ExchangeRateDirective } from './header/exchange-rate/exchange-rate.directive';
 import { HiddenDirective } from './header/exchange-rate/hidden.directive';
+import { ProductsService } from './products.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,11 @@ import { HiddenDirective } from './header/exchange-rate/hidden.directive';
   imports: [
     BrowserModule,
     SharedModule,
-    NoopAnimationsModule
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {provide: ProductsService, useClass: ProductsService} //короткая запись ProductsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

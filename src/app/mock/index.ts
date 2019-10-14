@@ -76,7 +76,7 @@ export const products: IProduct[] = [
 ];
 
 
-// export const products$: Observable<IProduct[]> = of(products)
-//   .pipe(
-//     delay(3000)
-//   );
+export const products$: Observable<IProduct[]> = of(products)
+  .pipe(
+    delay(3000)
+  );

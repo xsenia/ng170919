@@ -73,7 +73,7 @@ export class ExchangeRateDirective implements OnInit {
     }, this.delayMs)
   }
 
-  private clearInterval(): ExchangeRateDirective {
+  private clearInterval(): any {
     clearInterval(this.intervalID);
   }
 
