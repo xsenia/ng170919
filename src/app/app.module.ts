@@ -12,6 +12,8 @@ import { ExchangeRateComponent } from './header/exchange-rate/exchange-rate.comp
 import { ExchangeRateDirective } from './header/exchange-rate/exchange-rate.directive';
 import { HiddenDirective } from './header/exchange-rate/hidden.directive';
 import { ProductsService } from './products.service';
+import { ModalModule } from './modal/modal.module';
+import { CardConfirmModalComponent } from './card-confirm-modal/card-confirm-modal.component';
 
 @NgModule({
   declarations: [
@@ -22,16 +24,19 @@ import { ProductsService } from './products.service';
     ProductFilterPipe,
     ExchangeRateComponent,
     ExchangeRateDirective,
-    HiddenDirective
+    HiddenDirective,
+    CardConfirmModalComponent
   ],
   imports: [
     BrowserModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ModalModule
   ],
   providers: [
     {provide: ProductsService, useClass: ProductsService} //короткая запись ProductsService
   ],
+  entryComponents: [CardConfirmModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
