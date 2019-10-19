@@ -16,52 +16,16 @@ export class AppComponent {
     subtitle: {text: 'Подзаголовок'}
   };
 
-  public searchTerm: string = '';
-
-  public products$!: Observable<IProduct[]>;
-
-  public drawer: MatSidenav;
-
-  public constructor(
-    private ProductsService: ProductsService
-  ) {}  
-
-  public isShow: boolean = true;
-
-  public onlyFavorites: boolean = false;
-
-
   
 
-  public ngOnInit(): void {
-    this.products$ = this.ProductsService.getProducts();
-
-    setTimeout (()=>{
-      this.isShow = false;
-    }, 3000)
-  }
-
+  public drawer: MatSidenav;
 
 
   public setSideNav(drawer: MatSidenav): void {
     Promise.resolve().then(() => this.drawer = drawer);
   }
    
-  // public search(event: KeyboardEvent): void {
-  //   this.searchTerm = $event.target.value;
-  // }
-  //или по-другому:
-
-  public search({target}: Event): void {
-    const value: string = (target as HTMLInputElement).value; 
-    this.searchTerm = value;
-    console.log(this.searchTerm);
-  }
-
-  public toggleOnlyFavorites(event: MatCheckboxChange): void {
-      console.log(event.checked);
-      this.onlyFavorites = event.checked;
-  }
+  
 
 }
 

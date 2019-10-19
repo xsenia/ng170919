@@ -3,19 +3,7 @@
     
     <ng-template #content>
         
-        <mat-form-field class="product-search">
-            <input matInput type="text" placeholder="Поиск товаров" (input)="search($event)">
-        </mat-form-field>
-
-        <mat-checkbox (change)="toggleOnlyFavorites($event)">Show favorites only</mat-checkbox>
-        
-        <mat-grid-list cols="5" rowHeight="250"  *ngIf="products$ | async as products; else load">
-            <mat-grid-tile *ngFor="let product of products | productFilter:searchTerm:onlyFavorites">
-
-               <app-product-card [product]="product"></app-product-card>
-
-            </mat-grid-tile>
-        </mat-grid-list>
+        <router-outlet></router-outlet>
 
     </ng-template>
 
