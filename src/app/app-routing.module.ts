@@ -5,12 +5,21 @@ import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'products'
+  },
+  {
     path: 'login',
     component: LoginComponent 
   },
   {
     path: 'products',
     component: ProductsComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'products'
   }
 ]
 
